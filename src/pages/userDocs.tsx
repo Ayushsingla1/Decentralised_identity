@@ -1,6 +1,7 @@
 import NavBar from "../components/navbar";
 
-const Requests = () => {
+
+const UserDocs = () => {
     return (
         <div className="w-screen min-h-screen bg-[#212121]">
             <NavBar/>
@@ -8,4 +9,4 @@ const Requests = () => {
     )
 }
 
-export default Requests;
+export default UserDocs;
