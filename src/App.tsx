@@ -7,6 +7,8 @@ import NotFound from './pages/notFound'
 import ApplyDocs from './pages/applyDocs'
 import UserDocs from './pages/userDocs'
 import ApplyForm from './pages/applyForm'
+import Admin from './pages/admin'
+import AllAppications from './pages/allApplications'
 function App() {
 
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path = '/apply' element = {<ApplyDocs/>}/>
         <Route path = '/documents' element = {<UserDocs/>}/>
         <Route path = '/form' element = {<ApplyForm/>}/>
+        <Route path = '/admin' element = {<Admin/>}/>
+        <Route path='/allApplications' element={<AllAppications/>}/>
         <Route path = '*' element = {<NotFound/>}/>
       </Route>
     </Routes>

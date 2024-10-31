@@ -1,11 +1,9 @@
 import NavBar from "../components/navbar";
 import { NavLink } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useEffect } from "react";
 
-const Home = () => {
-
-    return (
+const Admin = () => {
+    return ( 
         <div className="bg-[#212121] w-screen min-h-screen">
             <NavBar />
             <div className="bg-[#121212] text-white font-sans min-h-screen">
@@ -92,5 +90,5 @@ const Home = () => {
         </div>
     );
 }
-
-export default Home;
+ 
+export default Admin;
