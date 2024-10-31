@@ -7,8 +7,6 @@ const Home = () => {
         <div className="bg-[#212121] w-screen min-h-screen">
             <NavBar />
             <div className="bg-[#121212] text-white font-sans min-h-screen">
-
-                {/* Hero Section */}
                 <section className="relative pt-28 pb-20 px-8 text-center">
                     <div className="absolute inset-0 bg-gradient-to-b from-[#2A2A2A] to-[#121212] opacity-50"></div>
                     <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#7b3fe4] to-blue-600 mb-6 z-10 relative animate__animated animate__fadeInDown animate__delay-1s">
@@ -23,8 +21,6 @@ const Home = () => {
                     </div>
                     <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-[#121212] to-transparent"></div>
                 </section>
-
-                {/* Features Section */}
                 <section className="py-20 px-10 bg-[#1E1E1E] text-center rounded-3xl mx-4 md:mx-20 shadow-lg">
                     <h2 className="text-3xl font-semibold text-white mb-12 animate__animated animate__fadeIn">Why Decentralized Identity?</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
@@ -43,8 +39,6 @@ const Home = () => {
                         ))}
                     </div>
                 </section>
-
-                {/* Benefits Section */}
                 <section className="py-20 px-8 text-center">
                     <h2 className="text-3xl font-semibold mb-10 animate__animated animate__fadeIn">How It Works</h2>
                     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -64,8 +58,6 @@ const Home = () => {
                         ))}
                     </div>
                 </section>
-
-                {/* Call to Action Section */}
                 <section className="bg-gradient-to-r from-[#7b3fe4] to-blue-700 py-16 px-10 text-center rounded-lg mx-auto shadow-lg animate__animated animate__fadeIn">
                     <h2 className="text-xl font-semibold text-white mb-4">Join the Decentralized Identity Revolution</h2>
                     <p className="text-gray-100 mb-8 max-w-md mx-auto">
@@ -75,8 +67,6 @@ const Home = () => {
                         Apply for Decentralized ID
                     </NavLink>
                 </section>
-
-                {/* Footer */}
                 <footer className="bg-[#1C1C1C] py-10 text-center mt-12 text-gray-500">
                     <p className="text-sm animate__animated animate__fadeIn">© 2024 Decentralized U. All rights reserved.</p>
                     <div className="flex justify-center gap-x-[32px] mt-[16px]">

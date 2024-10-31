@@ -5,7 +5,7 @@ import {
   mainnet,
   optimism,
   polygon,
-  sepolia
+  sepolia,
 } from 'wagmi/chains';
 
 export const config = getDefaultConfig({
