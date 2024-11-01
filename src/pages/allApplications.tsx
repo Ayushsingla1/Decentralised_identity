@@ -10,7 +10,7 @@ export type fetchAllReturnType = {
     1: string,
     2: string,
     3: string,
-    4: bigint,
+    4: string,
     5: string
 }
 

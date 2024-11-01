@@ -12,8 +12,6 @@ export function clientToSigner(client: Client<Transport, Chain, Account>) {
       ensAddress: chain.contracts?.ensRegistry?.address,
     }
 
-    console.log(network)
-
     const provider = new BrowserProvider(transport, network);
     const signer = new JsonRpcSigner(provider, account.address)
     return signer
@@ -24,7 +22,6 @@ export function clientToSigner(client: Client<Transport, Chain, Account>) {
       name: chain.name,
       ensAddress: chain.contracts?.ensRegistry?.address,
     }
-    console.log(network)
     const provider = new BrowserProvider(transport, network);
     const signer = new JsonRpcSigner(provider, account.address)
     console.log(signer)
@@ -37,7 +34,6 @@ export function clientToSigner(client: Client<Transport, Chain, Account>) {
       name: "Polygon Amoy Testnet",
       ensAddress: chain.contracts?.ensRegistry?.address,
     }
-    console.log(network)
     
     const provider = new BrowserProvider(transport, network);
     const signer = new JsonRpcSigner(provider, account.address)

@@ -2,6 +2,8 @@ import { Contract } from "ethers";
 import { JsonRpcSigner } from "ethers";
 import { userDetails } from "../components/form";
 import { constant } from "../../Constants";
+// import axios from "axios";
+// import { sign } from "viem/accounts";
 
 export const submitDetails = async(signer: JsonRpcSigner | undefined, details:userDetails) => {
     const contract = new Contract(constant.contractAddressSepolia , constant.contractAbi, signer);
@@ -28,31 +30,28 @@ export const submitDetails = async(signer: JsonRpcSigner | undefined, details:us
         }
 }
 
-// export const uploadToIPFS = async () => {
-//     if (!fileInput) {
-//       console.log("No file selected");
-//       return;
-//     }
+export const getRequestsByAddress = async(signer:JsonRpcSigner | undefined, address:string | undefined) => {
+  const contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer)
+  try {
+    
+    const res = await contract.getData(address);
+    console.log(res);
+    return res;
+    
+  } catch (error) {
+    console.log("error while fetchig requested details: ", error);
+    return false;
+  }
+}
 
-//     try {
-//       const formData = new FormData();
-//       formData.append("Body", fileInput, "uploadkr.png"); // Use fileInput directly
-//       formData.append("Key", "uploadkr.png");
-//       formData.append("ContentType", "image/png");
-
-//       const response = await axios.post(
-//         "https://api.quicknode.com/ipfs/rest/v1/s3/put-object",
-//         formData,
-//         {
-//           headers: {
-//             "x-api-key": API_KEY,
-//             "Content-Type": "multipart/form-data",
-//           },
-//         }
-//       );
-
-//       console.log("File uploaded successfully:", response.data);
-//     } catch (error) {
-//       console.error("Error uploading file:", error);
-//     }
-//   };
+export const getCidByAddress = async(signer:JsonRpcSigner | undefined, address:string | undefined) => {
+  const contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer);
+  try {
+    const res = await contract.getDataHash(address);
+    console.log(res)
+    return res.toString()
+  } catch (error) {
+    console.log(`error occured while fetching details`);
+    return error;
+  }
+}
