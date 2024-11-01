@@ -19,5 +19,4 @@ const RequestedDocCard = ({res}:any) => {
         </div>
     </div> );
 }
- 
 export default RequestedDocCard;
