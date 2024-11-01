@@ -126,7 +126,6 @@ const Form = ({address}:{ address: `0x${string}` | undefined }) => {
         </button>
     </div>
 </div>
-
     )
 }
 
