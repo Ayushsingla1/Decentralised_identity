@@ -1,32 +1,32 @@
 export const userDocuments = [
     {
         docName : "Aadhar Card",
-        docDescription : "Life got fcked so card is also fcked",
+        docDescription : "Apply for Aadhar Card",
         docImg : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHCPHMlo2jwwbPDI-PalR-7lNgdBfeFQItlg&s",
     },
     {
-        docName : "Aadhar Card",
-        docDescription : "Life got fcked so card is also fcked",
+        docName : "Pan Card",
+        docDescription : "Apply for Pan Card",
         docImg : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHCPHMlo2jwwbPDI-PalR-7lNgdBfeFQItlg&s",
     },
     {
-        docName : "Aadhar Card",
-        docDescription : "Life got fcked so card is also fcked",
+        docName : "Certificate",
+        docDescription : "Apply for Certificate",
         docImg : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHCPHMlo2jwwbPDI-PalR-7lNgdBfeFQItlg&s",
     },
     {
-        docName : "Aadhar Card",
-        docDescription : "Life got fcked so card is also fcked",
+        docName : "Certificate",
+        docDescription : "Apply for Certificate",
         docImg : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHCPHMlo2jwwbPDI-PalR-7lNgdBfeFQItlg&s",
     },
     {
-        docName : "Aadhar Card",
-        docDescription : "Life got fcked so card is also fcked",
+        docName : "Certificate",
+        docDescription : "Apply for Certificate",
         docImg : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHCPHMlo2jwwbPDI-PalR-7lNgdBfeFQItlg&s",
     },
     {
-        docName : "Aadhar Card",
-        docDescription : "Life got fcked so card is also fcked",
+        docName : "Certificate",
+        docDescription : "Apply for Certificate",
         docImg : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHCPHMlo2jwwbPDI-PalR-7lNgdBfeFQItlg&s",
     }
 ]

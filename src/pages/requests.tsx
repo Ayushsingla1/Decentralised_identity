@@ -26,7 +26,7 @@ const Requests = () => {
             <div className="text-center text-white text-2xl font-semibold mt-10">Your Requested Documents: </div>
             <div className="flex flex-col justify-center items-center gap-x-10 mt-10 px-10 gap-5 w-full">
                 {
-                    detail ? (<RequestedDocCard res={detail}/>) : (<div>No reqested documents</div>)
+                    detail ? (<RequestedDocCard res={detail}/>) : (<div className="text-white text-xl">No reqested documents</div>)
                 }
             </div>
         </div>
