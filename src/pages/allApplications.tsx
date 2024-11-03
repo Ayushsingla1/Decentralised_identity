@@ -20,7 +20,7 @@ const AllAppications = () => {
     const [allApplications, setAllApplications] = useState<fetchAllReturnType[] | undefined>([])
     const signer = useEthersSigner({chainId: connectedAccount.chainId});
     useEffect(() => {
-        fetchAllReq(signer).then(data => {
+        fetchAllReq(signer, connectedAccount).then(data => {
             data?.map((item:any) => console.log(item[4]))
             setAllApplications(data);
         }).finally(() => setLoading(false));

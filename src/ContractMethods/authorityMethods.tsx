@@ -1,5 +1,5 @@
 import { JsonRpcSigner } from 'ethers'
-import {constant} from '../../Constants'
+import {aiaContract, constant} from '../../Constants'
 import { Contract } from 'ethers'
 import axios from 'axios';
 
@@ -16,8 +16,15 @@ export const isAuthority = async(signer: JsonRpcSigner) => {
 
 
 // gets all the req application
-export const fetchAllReq = async(signer: JsonRpcSigner | undefined) => {
-    const contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer);
+export const fetchAllReq = async(signer: JsonRpcSigner | undefined, clientAcc:any) => {
+  let contract;
+  console.log(clientAcc.chainId)
+  if(clientAcc.chainId == 1320){
+    contract = new Contract(aiaContract.contractAddress, aiaContract.contractAbi, signer)
+    console.log(constant)
+  }else{
+    contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer)
+  }
     try {
         const res = await contract.getAllDataItems();
         console.log("response: ", res);
@@ -55,8 +62,15 @@ export const uploadToIPFS = async (fileInput: any) => {
     }
   };
 
-export const uploadIpfsToBlockChain = async(signer:JsonRpcSigner|undefined, hash:string, userAddress:string) => {
-    const contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer);
+export const uploadIpfsToBlockChain = async(signer:JsonRpcSigner|undefined, hash:string, userAddress:string, clientAcc: any) => {
+    let contract;
+    console.log(clientAcc.chainId)
+    if(clientAcc.chainId == 1320){
+      contract = new Contract(aiaContract.contractAddress, aiaContract.contractAbi, signer)
+      console.log(constant)
+    }else{
+      contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer)
+    }
     try {
         console.log("hash: ", hash, "\n", "userAddress: ", userAddress)
         const res = await contract.uploadDataHash(userAddress, hash);

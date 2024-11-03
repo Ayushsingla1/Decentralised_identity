@@ -12,7 +12,7 @@ const Requests = () => {
     useEffect(() =>{
 
         if(signer){
-            getRequestsByAddress(signer, connectedAccount.address).then((res) => {
+            getRequestsByAddress(signer, connectedAccount.address, connectedAccount).then((res) => {
                 if(res){
                     setDetail(res);
                 }
