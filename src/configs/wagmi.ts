@@ -42,6 +42,25 @@ export const sepoliaTestnet = /*#__PURE__*/ defineChain({
   testnet: true,
 })
 
+export const AIAtestnet = /*#__PURE__*/ defineChain({
+  id: 1320,
+  name: 'AIA Testnet',
+  nativeCurrency: { name: 'AIA', symbol: 'AIA', decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ['https://aia-dataseed1-testnet.aiachain.org'],
+  },
+  },
+  blockExplorers: {
+    default: {
+      name: 'aiascan',
+      url: 'https://testnet.aiascan.com/',
+      apiUrl: 'https://testnet.aiascan.com/api', // change this to aia test net apiUrl
+    },
+  },
+  testnet: true,
+})
+
 
 export const config = getDefaultConfig({
   appName: 'RainbowKit App',
@@ -53,6 +72,7 @@ export const config = getDefaultConfig({
     arbitrum,
     base,
     ...(import.meta.env.VITE_REACT_ENABLE_TESTNETS === 'true' ? [sepoliaTestnet] : []),
+    ...(import.meta.env.VITE_REACT_ENABLE_TESTNETS === 'true' ? [AIAtestnet] : []),
   ],
   ssr: true,
 });

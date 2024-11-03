@@ -32,7 +32,7 @@ const Form = ({address}:{ address: `0x${string}` | undefined }) => {
 
     const submitHandeler = async () => {
         console.log(details)
-        const isUploaded = await submitDetails(signer, details)
+        const isUploaded = await submitDetails(signer, details, connectedAcc)
         if(isUploaded){
             alert('details are sent for approval')
         }else{

@@ -14,7 +14,7 @@ const UserDocs = () => {
 
     const getCid = async () => {
         
-        const hash = await getCidByAddress(signer, connectedAccount.address)
+        const hash = await getCidByAddress(signer, connectedAccount.address, connectedAccount)
         setUserDocument(hash);
     }
 

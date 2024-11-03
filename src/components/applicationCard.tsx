@@ -28,7 +28,7 @@ const ApplicationCard =  ({item}: any) => {
         if(data){
             console.log("pdf created successfully")
             toast.success("Successfully applied")
-            const isUploadedToBlockchian = await uploadIpfsToBlockChain(signer, data.pin['cid'], details.publicAddress)
+            const isUploadedToBlockchian = await uploadIpfsToBlockChain(signer, data.pin['cid'], details.publicAddress, connectedAccount)
             if(isUploadedToBlockchian){
                 toast.success("successfully uploaded to blockchain!");
                 navigate('/allApplications');

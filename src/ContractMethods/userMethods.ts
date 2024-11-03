@@ -1,12 +1,20 @@
 import { Contract } from "ethers";
 import { JsonRpcSigner } from "ethers";
 import { userDetails } from "../components/form";
-import { constant } from "../../Constants";
-// import axios from "axios";
-// import { sign } from "viem/accounts";
+import { aiaContract, constant } from "../../Constants";
 
-export const submitDetails = async(signer: JsonRpcSigner | undefined, details:userDetails) => {
-    const contract = new Contract(constant.contractAddressSepolia , constant.contractAbi, signer);
+// const account = useAccount();
+// const chain = account.chainId;
+
+export const submitDetails = async(signer: JsonRpcSigner | undefined, details:userDetails, clientAcc: any) => {
+  console.log(clientAcc.chainId)
+  let contract;
+  if(clientAcc.chainId == 1320){
+    contract = new Contract(aiaContract.contractAddress, aiaContract.contractAbi, signer)
+  }else{
+    contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer)
+  }
+    //const contract = new Contract(constant.contractAddressSepolia , constant.contractAbi, signer);
         if(details.age === undefined || details.lastName.trim() === "" || details.firstName.trim() === "" || details.fatherName.trim() === "" || details.dob.trim() === ""){
             alert('all the fields should be filled');
             return;
@@ -30,8 +38,13 @@ export const submitDetails = async(signer: JsonRpcSigner | undefined, details:us
         }
 }
 
-export const getRequestsByAddress = async(signer:JsonRpcSigner | undefined, address:string | undefined) => {
-  const contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer)
+export const getRequestsByAddress = async(signer:JsonRpcSigner | undefined, address:string | undefined, clientAcc:any) => {
+  let contract;
+  if(clientAcc.chainId == 1320){
+    contract = new Contract(aiaContract.contractAddress, aiaContract.contractAbi, signer)
+  }else{
+    contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer)
+  }
   try {
     
     const res = await contract.getData(address);
@@ -44,8 +57,13 @@ export const getRequestsByAddress = async(signer:JsonRpcSigner | undefined, addr
   }
 }
 
-export const getCidByAddress = async(signer:JsonRpcSigner | undefined, address:string | undefined) => {
-  const contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer);
+export const getCidByAddress = async(signer:JsonRpcSigner | undefined, address:string | undefined, clientAcc:any) => {
+  let contract;
+  if(clientAcc.chainId == 1320){
+    contract = new Contract(aiaContract.contractAddress, aiaContract.contractAbi, signer)
+  }else{
+    contract = new Contract(constant.contractAddressSepolia, constant.contractAbi, signer)
+  }
   try {
     const res = await contract.getDataHash(address);
     console.log(res)
